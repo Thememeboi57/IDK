@@ -45,7 +45,7 @@
             // 
             // btnCalculate
             // 
-            btnCalculate.Location = new Point(76, 156);
+            btnCalculate.Location = new Point(62, 155);
             btnCalculate.Name = "btnCalculate";
             btnCalculate.Size = new Size(75, 23);
             btnCalculate.TabIndex = 2;
@@ -55,7 +55,7 @@
             // 
             // btnExit
             // 
-            btnExit.Location = new Point(232, 156);
+            btnExit.Location = new Point(213, 156);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(74, 22);
             btnExit.TabIndex = 3;
@@ -65,7 +65,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(63, 34);
+            label1.Location = new Point(49, 34);
             label1.Name = "label1";
             label1.Size = new Size(88, 15);
             label1.TabIndex = 0;
@@ -76,7 +76,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(63, 98);
+            label2.Location = new Point(49, 98);
             label2.Name = "label2";
             label2.Size = new Size(74, 15);
             label2.TabIndex = 4;
@@ -85,14 +85,14 @@
             // 
             // txtNumberGrade
             // 
-            txtNumberGrade.Location = new Point(223, 31);
+            txtNumberGrade.Location = new Point(201, 31);
             txtNumberGrade.Name = "txtNumberGrade";
             txtNumberGrade.Size = new Size(100, 23);
             txtNumberGrade.TabIndex = 1;
             // 
             // txtLetterGrade
             // 
-            txtLetterGrade.Location = new Point(223, 90);
+            txtLetterGrade.Location = new Point(201, 90);
             txtLetterGrade.Name = "txtLetterGrade";
             txtLetterGrade.ReadOnly = true;
             txtLetterGrade.Size = new Size(100, 23);
