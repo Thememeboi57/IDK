@@ -14,21 +14,29 @@ namespace ScoreCalculator
         {
 
         }
-
+        int score;
+        int average;
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            int score = int.Parse(txtScore.Text);
+            if (int.TryParse(textBox1.Text, out int parsedScore))
+            {
+                score = parsedScore;
+            }
+            else
+            {
+                score = 0;
+            }
 
             scoreTotal += score;
             scoreCount++;
 
-            txtScoreTotal.Text = scoreTotal.ToString();
-            txtScoreCount.Text = scoreCount.ToString();
+            textBox2.Text = scoreTotal.ToString();
+            textBox3.Text = scoreCount.ToString();
 
-            int average = scoreTotal / scoreCount;
-            txtAverage.Text = average.ToString();
+            average = scoreTotal / scoreCount;
+            textBox4.Text = average.ToString();
 
-            txtScore.Focus();
+            textBox1.Focus();
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -36,10 +44,10 @@ namespace ScoreCalculator
             scoreTotal = 0;
             scoreCount = 0;
 
-            txtScore.Text = "";
-            txtScoreTotal.Text = "";
-            txtScoreCount.Text = "";
-            txtAverage.Text = "";
+            textBox1.Text = "";
+            textBox2.Text = "";
+            textBox3.Text = "";
+            textBox4.Text = "";
 
             txtScore.Focus();
         }
