@@ -34,39 +34,38 @@ namespace SimpleCalculator
 
         private void btnCalculate_Click(object sender, EventArgs e)
         {
-            decimal operand1 = Convert.ToDecimal(txtOperand1.Text);
-            string operator1 = txtOperator.Text;
-            decimal operand2 = Convert.ToDecimal(txtOperand2.Text);
+            try
+            {
+                decimal operand1 = Convert.ToDecimal(txtOperand1.Text);
+                string operator1 = txtOperator.Text;
+                decimal operand2 = Convert.ToDecimal(txtOperand2.Text);
 
-            decimal result = Calculate(operand1, operator1, operand2);
+                decimal result = Calculate(operand1, operator1, operand2);
 
-            txtResults.Text = result.ToString("F4");
+                txtResults.Text = result.ToString("F4");
 
-            txtOperand1.Focus();
-        }
-        private isPresent()
-        {
-
-        }
-        private isDecimal()
-        {
-
-        }
-        private isWithinRange()
-        {
-
-        }
-        private isOperator()
-        {
-
-        }
-        private isValidOperation()
-        {
-
-        }
-        private isValidData()
-        {
-
+                txtOperand1.Focus();
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Please enter a valid number.", "Format Error");
+            }
+            catch(OverflowException)
+            {
+                MessageBox.Show("The number you entered is too large or too small.", "Overflow Error");
+            }
+            catch (DivideByZeroException)
+            {
+                MessageBox.Show("You cannot  divide by zero.", "Divide By Zero Error");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    ex.Message + "\n\n" +
+                    "Error type: " + ex.GetType().Name + "\n\n" +
+                    "Stack trace:\n" + ex.StackTrace,
+                    "Error");
+            }
         }
         private void btnExit_Click(object sender, EventArgs e)
         {
