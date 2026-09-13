@@ -56,7 +56,7 @@ namespace SimpleCalculator
             }
             catch (DivideByZeroException)
             {
-                MessageBox.Show("You cannot  divide by zero.", "Divide By Zero Error");
+                MessageBox.Show("You cannot divide by zero.", "Divide By Zero Error");
             }
             catch (Exception ex)
             {
