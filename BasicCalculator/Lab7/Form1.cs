@@ -1,11 +1,12 @@
 using System;
+using System.Drawing.Text;
 using System.Net.NetworkInformation;
 using System.Windows.Forms;
 namespace Lab7
 {
     public partial class Form1 : Form
     {
-        private Calculator calculator = new Calculator();
+        private MemoryCalculator calculator = new MemoryCalculator();
         private bool startNewNumber = true;
         public Form1()
         {
@@ -142,6 +143,36 @@ namespace Lab7
             {
                 txtDisplay.Text += ".";
             }
+        }
+
+            private void btnMC_Click(object? sender, EventArgs e)
+        {
+            calculator.MemoryClear();
+            UpdateMemoryIndicator();
+        }
+        private void btnMS_Click(object? sender, EventArgs e)
+        {
+            calculator.SetValue(decimal.Parse(txtDisplay.Text));
+            calculator.MemoryStore();
+
+            UpdateMemoryIndicator();
+        }
+        private void btnMR_Click(object? sender, EventArgs e)
+        {
+            calculator.MemoryRecall();
+            txtDisplay.Text = calculator.Value.ToString();
+            startNewNumber = true;
+            UpdateMemoryIndicator();
+        }
+        private void btnMPlus_Click(object? sender, EventArgs e)
+        {
+            calculator.SetValue(decimal.Parse(txtDisplay.Text));
+            calculator.MemoryAdd();
+            UpdateMemoryIndicator();
+        }
+        private void UpdateMemoryIndicator()
+        {
+            lblMemory.Text = calculator.HasMemory ? "M" : "";
         }
     }
 }

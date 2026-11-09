@@ -50,6 +50,11 @@
             btnDecimal = new Button();
             btnAdd = new Button();
             txtDisplay = new TextBox();
+            lblMemory = new Label();
+            btnMC = new Button();
+            btnMR = new Button();
+            btnMS = new Button();
+            btnMPlus = new Button();
             SuspendLayout();
             // 
             // btnBack
@@ -255,11 +260,64 @@
             txtDisplay.Text = "0";
             txtDisplay.TextAlign = HorizontalAlignment.Right;
             // 
+            // lblMemory
+            // 
+            lblMemory.AutoSize = true;
+            lblMemory.Location = new Point(12, 20);
+            lblMemory.Name = "lblMemory";
+            lblMemory.Size = new Size(0, 15);
+            lblMemory.TabIndex = 22;
+            // 
+            // btnMC
+            // 
+            btnMC.Location = new Point(12, 68);
+            btnMC.Name = "btnMC";
+            btnMC.Size = new Size(48, 23);
+            btnMC.TabIndex = 23;
+            btnMC.Text = "MC";
+            btnMC.UseVisualStyleBackColor = true;
+            btnMC.Click += btnMC_Click;
+            // 
+            // btnMR
+            // 
+            btnMR.Location = new Point(15, 107);
+            btnMR.Name = "btnMR";
+            btnMR.Size = new Size(45, 23);
+            btnMR.TabIndex = 24;
+            btnMR.Text = "MR";
+            btnMR.UseVisualStyleBackColor = true;
+            btnMR.Click += btnMR_Click;
+            // 
+            // btnMS
+            // 
+            btnMS.Location = new Point(16, 145);
+            btnMS.Name = "btnMS";
+            btnMS.Size = new Size(44, 23);
+            btnMS.TabIndex = 25;
+            btnMS.Text = "MS";
+            btnMS.UseVisualStyleBackColor = true;
+            btnMS.Click += btnMS_Click;
+            // 
+            // btnMPlus
+            // 
+            btnMPlus.Location = new Point(15, 188);
+            btnMPlus.Name = "btnMPlus";
+            btnMPlus.Size = new Size(43, 23);
+            btnMPlus.TabIndex = 26;
+            btnMPlus.Text = "M+";
+            btnMPlus.UseVisualStyleBackColor = true;
+            btnMPlus.Click += btnMPlus_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(389, 274);
+            Controls.Add(btnMPlus);
+            Controls.Add(btnMS);
+            Controls.Add(btnMR);
+            Controls.Add(btnMC);
+            Controls.Add(lblMemory);
             Controls.Add(txtDisplay);
             Controls.Add(btnAdd);
             Controls.Add(btnDecimal);
@@ -312,5 +370,10 @@
         private Button btnDecimal;
         private Button btnAdd;
         private TextBox txtDisplay;
+        private Label lblMemory;
+        private Button btnMC;
+        private Button btnMR;
+        private Button btnMS;
+        private Button btnMPlus;
     }
 }
